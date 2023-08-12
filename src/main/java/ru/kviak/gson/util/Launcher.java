@@ -1,6 +1,7 @@
 package ru.kviak.gson.util;
 
 import ru.kviak.gson.view.LabelView;
+import ru.kviak.gson.view.PostView;
 
 import java.util.Scanner;
 
@@ -16,7 +17,7 @@ public class Launcher {
         while (true){
         switch (scanner.nextLine()) {
             case "Labels" -> LabelView.labelResponse();
-            case "Posts" -> System.out.println("Posts interface");
+            case "Posts" -> PostView.postResponse();
             case "Writers" -> System.out.println("Writers interface");
         }
         }

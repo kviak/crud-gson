@@ -52,7 +52,8 @@ public class LabelController {
         scanner.nextLine(); // Without this line, scanner take empty string.
         System.out.println("Введите название новой метки");
         String name = scanner.nextLine();
-
         gsonLabelRepository.update(new Label(id, name, Status.ACTIVE));
     }
+
+
 }
