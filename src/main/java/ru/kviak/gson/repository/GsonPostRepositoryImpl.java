@@ -19,7 +19,7 @@ public class GsonPostRepositoryImpl implements PostRepository {
         try {
             List<Post> l = new ArrayList<>();
             l.add(post);
-            java.io.Writer jsonWriter = new FileWriter("post.json");
+            java.io.Writer jsonWriter = new FileWriter("posts.json");
             new Gson().toJson(l, jsonWriter);
             jsonWriter.close();
 
@@ -32,7 +32,7 @@ public class GsonPostRepositoryImpl implements PostRepository {
         Type targetClassType = new TypeToken<ArrayList<Post>>() { }.getType();
         List<Post> listPost;
         try {
-            listPost = new Gson().fromJson(new FileReader("post.json"), targetClassType);
+            listPost = new Gson().fromJson(new FileReader("posts.json"), targetClassType);
 
             List<Post> withoutDel = new ArrayList<>();
             for (Post p: listPost) {
@@ -48,7 +48,7 @@ public class GsonPostRepositoryImpl implements PostRepository {
 
     private void reSave(List<Post> list) {
         try {
-            java.io.Writer jsonWriter = new FileWriter("post.json");
+            java.io.Writer jsonWriter = new FileWriter("posts.json");
             new Gson().toJson(list, jsonWriter);
             jsonWriter.close();
         } catch (IOException e) {

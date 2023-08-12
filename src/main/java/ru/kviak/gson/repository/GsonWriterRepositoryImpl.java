@@ -28,7 +28,7 @@ public class GsonWriterRepositoryImpl implements WriterRepository{
         Type targetClassType = new TypeToken<ArrayList<Writer>>() { }.getType();
         List<Writer> listWriter;
         try {
-            listWriter = new Gson().fromJson(new FileReader("writer.json"), targetClassType);
+            listWriter = new Gson().fromJson(new FileReader("writers.json"), targetClassType);
 
             List<Writer> withoutDel = new ArrayList<>();
             for (Writer w: listWriter) {
@@ -48,7 +48,7 @@ public class GsonWriterRepositoryImpl implements WriterRepository{
 
             var l = this.getAll();
             l.add(writer);
-            java.io.Writer jsonWriter = new FileWriter("writer.json"); // CREATE WRITER PREV WRITE
+            java.io.Writer jsonWriter = new FileWriter("writers.json"); // CREATE WRITER PREV WRITE
             new Gson().toJson(l, jsonWriter);
             jsonWriter.close();
 
@@ -61,7 +61,7 @@ public class GsonWriterRepositoryImpl implements WriterRepository{
 
     public void reSave(List<Writer> list) {
         try {
-            java.io.Writer jsonWriter = new FileWriter("writer.json");
+            java.io.Writer jsonWriter = new FileWriter("writers.json");
             new Gson().toJson(list, jsonWriter);
             jsonWriter.close();
         } catch (IOException e) {
@@ -96,7 +96,7 @@ public class GsonWriterRepositoryImpl implements WriterRepository{
         try {
             List<Writer> l = new ArrayList<>();
             l.add(writer);
-            java.io.Writer jsonWriter = new FileWriter("writer.json");
+            java.io.Writer jsonWriter = new FileWriter("writers.json");
             new Gson().toJson(l, jsonWriter);
             jsonWriter.close();
 
