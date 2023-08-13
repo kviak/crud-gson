@@ -2,6 +2,7 @@ package ru.kviak.gson.util;
 
 import ru.kviak.gson.view.LabelView;
 import ru.kviak.gson.view.PostView;
+import ru.kviak.gson.view.WriterView;
 
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class Launcher {
         switch (scanner.nextLine()) {
             case "Labels" -> LabelView.labelResponse();
             case "Posts" -> PostView.postResponse();
-            case "Writers" -> System.out.println("Writers interface");
+            case "Writers" -> WriterView.writerResponse();
         }
         }
     }
